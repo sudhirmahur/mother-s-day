@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mother's Day Card</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato&display=swap');
+
+body {
+    background-color: #26262b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.card-front, .card-inside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #121421;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+    transition: transform 0.6s;
+}
+
+.card:hover .card-front {
+    transform: rotateY(-180deg);
+}
+
+.card-inside {
+    transform: rotateY(180deg);
+    transition: transform 0.6s;
+}
+
+.card:hover .card-inside {
+    transform: rotateY(0deg);
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    color: #ff4081;
+    margin-bottom: 20px;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.heart-left, .heart-right {
+    width: 20px;
+    height: 35px;
+    background-color: #ff4081;
+    border-radius: 50% 50% 0 0;
+    position: relative;
+}
+
+.heart-left::before, .heart-right::before {
+    content: "";
+    width: 20px;
+    height: 35px;
+    background-color: #ff4081;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    top: -15px;
+}
+
+.heart-left {
+    transform: rotate(-45deg);
+}
+
+.heart-right {
+    transform: rotate(45deg);
+}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-front">
+            <h1>Happy Mother's Day</h1>
+            <div class="heart">
+                <div class="heart-left"></div>
+                <div class="heart-right"></div>
+            </div>
+            <p>To the most amazing mom in the world!</p>
+        </div>
+        <div class="card-inside">
+            <p>Mom, your love and guidance have shaped me into the person I am today. Thank you for always being there for me, supporting me, and believing in me. I love you with all my heart.</p>
+            <p>Happy Mother's Day!</p>
+        </div>
+    </div>
+</body>
+</html>
